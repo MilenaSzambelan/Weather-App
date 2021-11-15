@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 2 Homework</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF"
+      crossorigin="anonymous"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Raleway:wght@100&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="body">
+         <div class="position-relative"></div>
+      </br>
+          <form>
+        <div class="card-body">
+            <input class="city" type="text"  placeholder="Choose your city" id="search-text-input"/>
+            <input class="search" type="submit" value="Search" />
+            <button class ="locale" id ="location">Localisation</button>
+            
+         </div> 
+         </br>
+        </form>
+           <div class="class row ">  
+              <div class="row row-cols-12 ">
+                <div class="col-4">
+<img src="images/sunnysmall.png" alt="Sunny Weather" class="sun"/></div>
+
+           <div class="col-8">     <strong><h1 id=town></h1></strong></div></div></div>
+                </br>
+        <h2><strong><span id = temperature></span>°C/ <span id = mintemp></span> °C</strong></h2>
+        <h4></h4>
+        <h3></h3>
+        
+             </br>
+    <div class="class row">
+    <div class="row row-cols-2 ">
+    <div class="col">Temperature</div>
+    <div class="col-two"> <span id= temperature2>23</span> °C | <link rel="stylesheet" href="#">°F</div>
+    <div class="col"> Humidity</div>
+    <div class="col-two"> <span id = "humidity">57</span>  % </div>
+    <div class="col">Wind</div>
+    <div class="col-two"> <span id = "wind"> 4 </span> km/h</div>
+    <div class="col">Condition</div>
+    <div class="col-two"> <span class= "cond" id = "description"> Sunny</span> </div>
+  </div>
+    <div class="row row-cols-2 ">
+      <div class="col">Pressure</div>
+    <div class="col-two"> <span id = "pressure">40</span>  hPa</div>
+    <div class="col">Cloudiness </div>
+    <div class="col-two"> <span id = "clouds"> 2 </span> % </div>
+    <div class="col">Sunrise</div>
+    <div class="col-two">7:30</div>
+    <div class="col">Sunset</div>
+    <div class="col-two">18:45</div>
+    </div>
+    </div>
+         <hr>
+ <div class="row row-cols-6 ">
+   <div class="col-days-first">Thu</div>
+   <div class="col-days">Fri</div>
+  <div class="col-days">Sat</div>
+   <div class="col-days">Sun</div>
+   <div class="col-days">Mon</div>
+   <div class="col-days">Tue</div>
+ </div>
+  <div class="row row-cols-6">
+<div class="col-pic-1"><div class="col-pic-1"> <img src="images/sunnysmall.png" alt="Sunny Weather" class="sunny"/></div>
+</div>
+<div class="col-pic"><div class="col-pic-1"> <img src="images/rainny.png" alt="Rainny Weather" class="rainny"/></div>
+
+</div>
+<div class="col-pic"><div class="col-pic-1"> <img src="images/thunder.png" alt="Thunder Weather" class="thunder"/></div>
+</div>
+<div class="col-pic"><div class="col-pic-1"> <img src="images/rainny.png" alt="Rainny Weather" class="rainny"/></div>
+</div>
+<div class="col-pic"><div class="col-pic-1"> <img src="images/sunnysmall.png" alt="Sunny Weather" class="sunny"/></div>
+</div>
+<div class="col-pic"><div class="col-pic-1"> <img src="images/partly.png" alt="Partly Weather" class="partly"/></div>
+  </div>
+  </div>
+ <div class="row row-cols-6">
+<div class="col-temp-1">24°C/ 19°C</div>
+<div class="col-temp">17°C/ 13°C</div>
+<div class="col-temp">12°C/ 7°C</div>
+<div class="col-temp">16°C/ 12°C</div>
+<div class="col-temp">22°C/ 17°C</div>
+<div class="col-temp">21°C/ 19°C</div>
+ </div>
+
+</br>
+</div>
+</div>
+</div>
+</div>
+<script src="script.js"></script>
+  </body>
+</html>
