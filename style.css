@@ -1,0 +1,140 @@
+div.body {
+  border: 4px;
+  background: linear-gradient(
+    -20deg,
+    rgb(232, 223, 247) 0%,
+    rgb(243, 232, 218) 100%
+  );
+
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  max-width: 55%;
+  border-radius: 20px;
+  box-shadow: rgba(37, 39, 89, 0.08) 10px 10px 10px;
+}
+h1 {
+  text-align: right;
+  margin-right: 18%;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bolder;
+  font-size: 80px;
+  text-decoration: underline rgb(120, 120, 121);
+  text-decoration-thickness: 3px;
+  margin-bottom: 0;
+}
+h2 {
+  color: gray;
+  font-family: "Montserrat", sans-serif;
+  margin-left: 10%;
+  margin-bottom: 0;
+  font-weight: 700;
+  font-size: 38px;
+}
+h3 {
+  text-align: right;
+  margin-right: 18%;
+  font-family: "Raleway", sans-serif;
+  font-weight: 900;
+  margin-bottom: 0;
+}
+h4 {
+  text-align: right;
+  margin-right: 18%;
+  margin-bottom: 0;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+}
+
+.locale {
+  border-radius: 2px;
+  border-color: lightgray;
+  background-color: whitesmoke;
+  border-width: 1px;
+  border-style: solid;
+  color: rgb(133, 126, 126);
+  box-shadow: rgba(37, 39, 89, 0.08) 10px 10px 10px;
+}
+
+.sun {
+  max-width: 60%;
+  margin: -14px 70px;
+}
+
+.rainny {
+  position: relative;
+  max-width: 50%;
+  margin: 0 auto;
+}
+.thunder {
+  position: relative;
+  max-width: 50%;
+  margin: 0 auto;
+}
+.sunny {
+  position: relative;
+  max-width: 50%;
+  margin: 0 auto;
+}
+.partly {
+  position: relative;
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+div.card-body {
+  margin-left: 5%;
+}
+input.city {
+  border-color: lightgray;
+  background-color: white;
+  border-radius: 2px;
+  border-width: 1px;
+  border-style: solid;
+  padding: 0 10px;
+  box-shadow: rgba(37, 39, 89, 0.08) 10px 10px 10px;
+  font-family: san "Raleway", sans-serif;
+}
+input.search {
+  border-radius: 2px;
+  border-color: lightgray;
+  background-color: whitesmoke;
+  border-width: 1px;
+  border-style: solid;
+  color: rgb(133, 126, 126);
+  box-shadow: rgba(37, 39, 89, 0.08) 10px 10px 10px;
+}
+.cond {
+  text-transform: capitalize;
+}
+
+.row-cols-2 {
+  padding: 0 auto;
+  margin-left: 10%;
+  width: 36%;
+  font-size: smaller;
+}
+.row-cols-6 {
+  top: -100px;
+  text-align: center;
+  padding: 0 auto;
+  font-family: var(--bs-body-font-family);
+}
+
+.col-two {
+  border-left: 2px solid rgb(149, 149, 173);
+  font-family: var(--bs-body-font-family);
+}
+.col-temp {
+  border-left: 2px solid rgb(149, 149, 173);
+}
+
+.col-days {
+  border-left: 2px solid rgb(149, 149, 173);
+}
+.col-days-first {
+  border-left: none;
+}
+.col-pic {
+  border-left: 2px solid rgb(149, 149, 173);
+}
