@@ -25,7 +25,7 @@
       </br>
           <form>
         <div class="card-body">
-            <input class="city" type="text"  placeholder="Choose your city" id="search-text-input"/>
+            <input class="city" type="text"  placeholder="Choose your city" id="search-text-input" autocomplete="off"/>
             <input class="search" type="submit" value="Search" />
             <button class ="locale" id ="location">Localisation</button>
             
@@ -40,7 +40,7 @@
 
            <div class="col-8">     <strong><h1 id=town></h1></strong></div></div></div>
                 </br>
-        <h2><strong><span id = temperature></span>°C/ <span id = mintemp></span> °C</strong></h2>
+        <h2><strong><span id = "temperature" ></span>°C/ <span id = mintemp></span> °C</strong></h2>
         <h4></h4>
         <h3></h3>
         
@@ -48,11 +48,11 @@
     <div class="class row">
     <div class="row row-cols-2 ">
     <div class="col">Temperature</div>
-    <div class="col-two"> <span id= temperature2>23</span> °C | <link rel="stylesheet" href="#">°F</a></div>
+    <div class="col-two"> <span id= temperature2></span> °C | <a href="#" id="fahrenheit"> °F</a>  </div>
     <div class="col"> Humidity</div>
-    <div class="col-two"> <span id = "humidity">57</span>  % </div>
+    <div class="col-two"> <span id = "humidity"></span>  % </div>
     <div class="col">Wind</div>
-    <div class="col-two"> <span id = "wind"> 4 </span> km/h</div>
+    <div class="col-two"> <span id = "wind"> </span> km/h</div>
     <div class="col">Condition</div>
     <div class="col-two"> <span class= "cond" id = "description"> Sunny</span> </div>
   </div>

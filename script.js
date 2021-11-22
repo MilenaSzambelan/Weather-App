@@ -46,6 +46,18 @@ let h3 = document.querySelector("h3");
 
 h3.innerHTML = ` ${hours}:${minutes}`;
 
+function showFahrenheitTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  let temperature2Element = document.querySelector("#temperature2");
+  let mintempElement = document.querySelector("#mintemp");
+
+  let fahrenheitTemp = (temperatureElement.innerHTML * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+  temperature2Element.innerHTML = Math.round(fahrenheitTemp);
+  mintempElement.innerHTML = Math.round(fahrenheitTemp);
+}
+
 function showWeather(response) {
   console.log(response.data);
   document.querySelector("#town").innerHTML = response.data.name;
@@ -105,3 +117,6 @@ let localizationButton = document.querySelector("#location");
 localizationButton.addEventListener("click", getLocation);
 
 find("Tokyo");
+
+let fahrenheit = document.querySelector("#fahrenheit");
+fahrenheit.addEventListener("click", showFahrenheitTemp);
