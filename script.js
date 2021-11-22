@@ -52,10 +52,21 @@ function showFahrenheitTemp(event) {
   let temperature2Element = document.querySelector("#temperature2");
   let mintempElement = document.querySelector("#mintemp");
 
-  let fahrenheitTemp = (temperatureElement.innerHTML * 9) / 5 + 32;
+  let fahrenheitTemp = (celesiusTemp * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemp);
   temperature2Element.innerHTML = Math.round(fahrenheitTemp);
   mintempElement.innerHTML = Math.round(fahrenheitTemp);
+}
+
+function showCelesiusTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  let temperature2Element = document.querySelector("#temperature2");
+  let mintempElement = document.querySelector("#mintemp");
+
+  temperatureElement.innerHTML = Math.round(celesiusTemp);
+  temperature2Element.innerHTML = Math.round(celesiusTemp);
+  mintempElement.innerHTML = Math.round(celesiusTemp);
 }
 
 function showWeather(response) {
@@ -79,6 +90,8 @@ function showWeather(response) {
 
   document.querySelector("#pressure").innerHTML = response.data.main.pressure;
   document.querySelector("#clouds").innerHTML = response.data.clouds.all;
+
+  celesiusTemp = response.data.main.temp;
 
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
@@ -118,5 +131,10 @@ localizationButton.addEventListener("click", getLocation);
 
 find("Tokyo");
 
+let celesiusTemp = null;
+
 let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", showFahrenheitTemp);
+
+let celesiusLink = document.querySelector("#celesius-link");
+celesiusLink.addEventListener("click", showCelesiusTemperature);
