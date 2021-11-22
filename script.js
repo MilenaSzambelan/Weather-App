@@ -67,6 +67,7 @@ function showWeather(response) {
 
   document.querySelector("#pressure").innerHTML = response.data.main.pressure;
   document.querySelector("#clouds").innerHTML = response.data.clouds.all;
+
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
