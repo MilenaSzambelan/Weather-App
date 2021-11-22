@@ -51,6 +51,8 @@ function showFahrenheitTemp(event) {
   let temperatureElement = document.querySelector("#temperature");
   let temperature2Element = document.querySelector("#temperature2");
   let mintempElement = document.querySelector("#mintemp");
+  celesiusLink.classList.remove("active");
+  fahrenheit.classList.add("active");
 
   let fahrenheitTemp = (celesiusTemp * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemp);
@@ -67,6 +69,8 @@ function showCelesiusTemperature(event) {
   temperatureElement.innerHTML = Math.round(celesiusTemp);
   temperature2Element.innerHTML = Math.round(celesiusTemp);
   mintempElement.innerHTML = Math.round(celesiusTemp);
+  celesiusLink.classList.add("active");
+  fahrenheit.classList.remove("active");
 }
 
 function showWeather(response) {
