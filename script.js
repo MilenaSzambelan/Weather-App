@@ -74,7 +74,6 @@ function showCelesiusTemperature(event) {
 }
 
 function showWeather(response) {
-  console.log(response.data);
   document.querySelector("#town").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
