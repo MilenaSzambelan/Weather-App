@@ -137,19 +137,33 @@ function getLocation(event) {
   navigator.geolocation.getCurrentPosition(getLocalization);
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function displayForecast(response) {
-  console.log(response.data);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  let days = ["Thu", "Sat", "Sun"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-2">
-    <div class="col-days-first">${day}</div>
-<div class="col-pic-1"> <img src="images/sunnysmall.png" alt="Sunny Weather" class="sunny"/></div>
-<div class="col-temp-1">24°C/ 19°C</div> </div>`;
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2">
+    <div class="col-days-first">${formatDay(forecastDay.dt)}</div>
+<div class="col-pic-1"> <img src= "images/${
+          forecastDay.weather[0].icon
+        }.png" alt="Sunny Weather" class="sunny"/></div>
+<div class="col-temp-1">${Math.round(forecastDay.temp.max)}°C/ ${Math.round(
+          forecastDay.temp.min
+        )}°C</div> </div>`;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
