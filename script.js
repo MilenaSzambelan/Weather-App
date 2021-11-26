@@ -73,6 +73,14 @@ function showCelesiusTemperature(event) {
   fahrenheit.classList.remove("active");
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "d73d79dd42b2b87a48a2c2e4799d500a";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function showWeather(response) {
   document.querySelector("#town").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
@@ -102,7 +110,10 @@ function showWeather(response) {
     `images/${response.data.weather[0].icon}.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
+
 function find(city) {
   let apiKey = "d73d79dd42b2b87a48a2c2e4799d500a";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -126,6 +137,23 @@ function getLocation(event) {
   navigator.geolocation.getCurrentPosition(getLocalization);
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Sat", "Sun"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+    <div class="col-days-first">${day}</div>
+<div class="col-pic-1"> <img src="images/sunnysmall.png" alt="Sunny Weather" class="sunny"/></div>
+<div class="col-temp-1">24°C/ 19°C</div> </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 let form = document.querySelector("form");
 form.addEventListener("submit", search);
 
@@ -135,6 +163,8 @@ localizationButton.addEventListener("click", getLocation);
 find("Tokyo");
 
 let celesiusTemp = null;
+
+displayForecast();
 
 let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", showFahrenheitTemp);
