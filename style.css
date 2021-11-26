@@ -60,22 +60,7 @@ h4 {
   margin: -14px 70px;
 }
 
-.rainny {
-  position: relative;
-  max-width: 50%;
-  margin: 0 auto;
-}
-.thunder {
-  position: relative;
-  max-width: 50%;
-  margin: 0 auto;
-}
 .sunny {
-  position: relative;
-  max-width: 50%;
-  margin: 0 auto;
-}
-.partly {
   position: relative;
   max-width: 50%;
   margin: 0 auto;
@@ -113,19 +98,23 @@ input.search {
   width: 36%;
   font-size: smaller;
 }
-.row-cols-6 {
-  top: -100px;
-  text-align: center;
+.row {
   padding: 0 auto;
   font-family: var(--bs-body-font-family);
+}
+
+.weather-forecast {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.col-2 {
+  border-left: 2px solid rgb(149, 149, 173);
 }
 
 .col-two {
   border-left: 2px solid rgb(149, 149, 173);
   font-family: var(--bs-body-font-family);
-}
-.col-temp {
-  border-left: 2px solid rgb(149, 149, 173);
 }
 
 .col-days {
@@ -135,7 +124,8 @@ input.search {
   border-left: none;
 }
 .col-pic {
-  border-left: 2px solid rgb(149, 149, 173);
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .foot {
   text-align: center;

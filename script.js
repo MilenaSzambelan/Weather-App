@@ -74,11 +74,22 @@ function showCelesiusTemperature(event) {
 }
 
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "d73d79dd42b2b87a48a2c2e4799d500a";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
+}
+
+function formatHours(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let mins = date.getMinutes();
+  if (mins < 10) {
+    mins = `0${mins}`;
+  }
+  return `${hours}:${mins}`;
 }
 
 function showWeather(response) {
@@ -110,6 +121,13 @@ function showWeather(response) {
     `images/${response.data.weather[0].icon}.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  document.querySelector("#sunrise").innerHTML = formatHours(
+    response.data.sys.sunrise * 1000
+  );
+  document.querySelector("#sunset").innerHTML = formatHours(
+    response.data.sys.sunset * 1000
+  );
 
   getForecast(response.data.coord);
 }
@@ -146,6 +164,8 @@ function formatDay(timestamp) {
 }
 
 function displayForecast(response) {
+  console.log(response.data);
+
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
@@ -157,7 +177,7 @@ function displayForecast(response) {
         forecastHTML +
         `<div class="col-2">
     <div class="col-days-first">${formatDay(forecastDay.dt)}</div>
-<div class="col-pic-1"> <img src= "images/${
+<div class="col-pic"> <img src= "images/${
           forecastDay.weather[0].icon
         }.png" alt="Sunny Weather" class="sunny"/></div>
 <div class="col-temp-1">${Math.round(forecastDay.temp.max)}°C/ ${Math.round(
