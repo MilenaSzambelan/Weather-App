@@ -137,7 +137,8 @@ function getLocation(event) {
   navigator.geolocation.getCurrentPosition(getLocalization);
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
