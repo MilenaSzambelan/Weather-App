@@ -164,8 +164,6 @@ find("Tokyo");
 
 let celesiusTemp = null;
 
-displayForecast();
-
 let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", showFahrenheitTemp);
 
