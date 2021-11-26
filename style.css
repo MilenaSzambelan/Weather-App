@@ -109,6 +109,7 @@ input.search {
 }
 
 .col-2 {
+  border-left: 2px solid rgb(149, 149, 173);
 }
 
 .col-two {
