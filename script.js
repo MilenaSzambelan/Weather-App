@@ -100,9 +100,9 @@ function showWeather(response) {
   document.querySelector("#temperature2").innerHTML = Math.round(
     response.data.main.temp
   );
-  document.querySelector("#mintemp").innerHTML = Math.round(
-    response.data.main.temp_min
-  );
+  //document.querySelector("#mintemp").innerHTML = Math.round(
+  //response.data.main.temp_min
+  //);
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
@@ -164,6 +164,7 @@ function formatDay(timestamp) {
 }
 
 function displayForecast(response) {
+  console.log(response.data);
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
@@ -185,6 +186,10 @@ function displayForecast(response) {
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+
+  document.querySelector("#mintemp").innerHTML = Math.round(
+    response.data.daily[0].temp.min
+  );
 }
 
 let form = document.querySelector("form");
